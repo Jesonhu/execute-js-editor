@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>解析 JS 编辑器</title>
+  <link rel="stylesheet" href="./resources/libs/codemirror/coddmirror-5.50.2.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/codemirror/5.50.2/addon/fold/foldgutter.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./resources/main/style/editor-js.css">
+</head>
+<body>
+  <!-- content -->
+  <!-- default content -->
+  <section id="static" class="hidden">
+    <pre><code id="static-js" data-height="">console.log(eval('2 + 2'));
+// expected output: 4
+
+console.log(eval(new String('2 + 2')));
+// expected output: 2 + 2
+
+console.log(eval('2 + 2') === eval('4'));
+// expected output: true
+
+console.log(eval('2 + 2') === eval(new String('2 + 2')));
+// expected output: false
+
+console.log(eval(new String('2 + 2')));
+// expected output: 2 + 2
+
+console.log(eval('2 + 2') === eval('4'));
+// expected output: true
+
+console.log(eval('2 + 2') === eval(new String('2 + 2')));
+// expected output: false
+  </code></pre>
+  </section>
+
+  <section id="live" class="live">
+      <header><h4>Execute-js-editor</h4></header>
+      <div id="editor" class="editor"></div>
+
+      <div class="output-container">
+          <div class="buttons-container">
+              <button id="execute" class="button run" type="button">运行 &rsaquo;</button>
+              <button id="reset" type="button" class="button">重置</button>
+          </div>
+          <div id="console" class="output"><code></code></div>
+      </div>
+  </section>
+
+  <!-- script -->
+  <script src="resources/libs/codemirror/coddmirror-5.50.2.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.50.2/addon/fold/foldcode.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.50.2/addon/fold/foldgutter.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.50.2/addon/fold/brace-fold.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.50.2/addon/fold/comment-fold.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.50.2/mode/javascript/javascript.min.js"></script>
+  <script src="resources/main/js/editor.js"></script>
+</body>
+</html>
